@@ -18,7 +18,6 @@ RUN apk update \
     && apk upgrade \
     && apk add --no-cache musl-dev git \
     && git clone https://github.com/shadowsocks/shadowsocks-rust \
-    && export RUSTFLAGS="-C target-cpu=native" \
     && cd shadowsocks-rust \
     && cargo build --release
 
