@@ -1,0 +1,31 @@
+FROM golang:alpine AS build-go
+
+RUN apk update \
+    && apk upgrade \
+    && apk add --no-cache git build-base \
+    && mkdir -p /go/src/github.com/shadowsocks \
+    && cd /go/src/github.com/shadowsocks \
+    && git clone https://github.com/shadowsocks/v2ray-plugin \
+    && cd v2ray-plugin \
+    && go get -d \
+    && go build
+
+RUN ls /go/src/github.com/shadowsocks/v2ray-plugin/v2ray-plugin
+
+FROM rust:alpine AS build-rust
+
+RUN apk update \
+    && apk upgrade \
+    && apk add --no-cache musl-dev git \
+    && git clone https://github.com/shadowsocks/shadowsocks-rust \
+    && export RUSTFLAGS="-C target-cpu=native" \
+    && cd shadowsocks-rust \
+    && cargo build --release
+
+FROM alpine:latest
+
+COPY --from=build-rust /shadowsocks-rust/target/release/ssserver /usr/local/bin/ssserver
+
+COPY --from=build-go /go/src/github.com/shadowsocks/v2ray-plugin/v2ray-plugin /usr/local/bin/v2ray-plugin
+
+ENTRYPOINT ["ssserver"]
