@@ -1,6 +1,9 @@
 # shadowsocks-docker
+[![Docker](https://github.com/HMBSbige/shadowsocks-docker/actions/workflows/Docker.yml/badge.svg)](https://github.com/HMBSbige/shadowsocks-docker/actions/workflows/Docker.yml)
+[![Docker](https://img.shields.io/badge/Docker-shadowsocks-blue?label=Docker&logo=docker)](https://github.com/users/HMBSbige/packages/container/package/shadowsocks)
 
-shadowsocks + v2ray-plugin
+[![shadowsocks-rust](https://img.shields.io/badge/shadowsocks--rust-v1.10.5-dea584)](https://github.com/shadowsocks/shadowsocks-rust)
+[![v2ray-plugin](https://img.shields.io/badge/v2ray--plugin-v1.3.1-00add8)](https://github.com/shadowsocks/v2ray-plugin)
 
 ## Getting Started
 
