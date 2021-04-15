@@ -1,6 +1,6 @@
 # shadowsocks-docker
 [![Docker](https://github.com/HMBSbige/shadowsocks-docker/actions/workflows/Docker.yml/badge.svg)](https://github.com/HMBSbige/shadowsocks-docker/actions/workflows/Docker.yml)
-[![Docker](https://img.shields.io/badge/Docker-shadowsocks-blue?label=Docker&logo=docker)](https://github.com/users/HMBSbige/packages/container/package/shadowsocks)
+[![Docker](https://img.shields.io/badge/shadowsocks-blue?label=Docker&logo=docker)](https://github.com/users/HMBSbige/packages/container/package/shadowsocks)
 [![Github last commit date](https://img.shields.io/github/last-commit/HMBSbige/shadowsocks-docker.svg?label=Updated&logo=github)](https://github.com/HMBSbige/shadowsocks-docker/commits)
 
 [![shadowsocks-rust](https://img.shields.io/badge/v1.10.5-dea584?label=shadowsocks-rust&logo=github)](https://github.com/shadowsocks/shadowsocks-rust)
