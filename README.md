@@ -3,7 +3,7 @@
 [![Docker](https://img.shields.io/badge/shadowsocks-blue?label=Docker&logo=docker)](https://github.com/users/HMBSbige/packages/container/package/shadowsocks)
 [![Github last commit date](https://img.shields.io/github/last-commit/HMBSbige/shadowsocks-docker.svg?label=Updated&logo=github)](https://github.com/HMBSbige/shadowsocks-docker/commits)
 
-[![shadowsocks-rust](https://img.shields.io/badge/v1.10.8-dea584?label=shadowsocks-rust&logo=github)](https://github.com/shadowsocks/shadowsocks-rust)
+[![shadowsocks-rust](https://img.shields.io/badge/v1.10.9-dea584?label=shadowsocks-rust&logo=github)](https://github.com/shadowsocks/shadowsocks-rust)
 [![v2ray-plugin](https://img.shields.io/badge/v1.3.1-00add8?label=v2ray-plugin&logo=github)](https://github.com/shadowsocks/v2ray-plugin)
 
 ## Getting Started
@@ -34,7 +34,7 @@ Or
 docker run -itd \
 --restart=always \
 --name=ss \
--v /root/config:/config:ro \
+-v ~/config:/config:ro \
 --net=host \
 ghcr.io/hmbsbige/shadowsocks \
 -c /config/ss.json
