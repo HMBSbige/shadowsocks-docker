@@ -23,9 +23,9 @@ RUN apk update \
 
 FROM alpine:latest
 
-COPY --from=build-rust /shadowsocks-rust/target/release/ssserver /usr/local/bin/ssserver
+COPY --from=build-rust /shadowsocks-rust/target/release/ssservice /usr/local/bin/ssservice
 
 COPY --from=build-go /go/src/github.com/shadowsocks/v2ray-plugin/v2ray-plugin /usr/local/bin/v2ray-plugin
 
-HEALTHCHECK CMD ["pidof", "ssserver"]
-ENTRYPOINT ["ssserver"]
+HEALTHCHECK CMD ["pidof", "ssservice"]
+ENTRYPOINT ["ssservice"]
