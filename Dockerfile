@@ -19,7 +19,7 @@ RUN apk update \
     && apk add --no-cache musl-dev git \
     && git clone https://github.com/shadowsocks/shadowsocks-rust \
     && cd shadowsocks-rust \
-    && cargo build --release --features aead-cipher-extra,stream-cipher
+    && cargo build --release --features aead-cipher-extra,stream-cipher,local-http
 
 FROM alpine:latest
 
