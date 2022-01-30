@@ -14,8 +14,6 @@ RUN apk update \
     && go get -d \
     && go build
 
-RUN ls /go/src/github.com/shadowsocks/v2ray-plugin/v2ray-plugin
-
 FROM rust:alpine AS build-rust
 
 ARG SS_RUST_VERSION
