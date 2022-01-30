@@ -30,7 +30,7 @@ jobs:
         with:
           push: true
           tags: ghcr.io/${{ env.Owner }}/${{ env.ProjectName }}:latest
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
           build-args: |
             GO_VERSION=1.16
             V2RAY_PLUGIN_VERSION=master
