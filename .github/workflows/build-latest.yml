@@ -1,0 +1,37 @@
+name: Docker
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+env:
+  ProjectName: shadowsocks
+  Owner: hmbsbige # ${{ github.repository_owner }}
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.CR_PAT }}
+
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: ghcr.io/${{ env.Owner }}/${{ env.ProjectName }}:latest
+          platforms: linux/amd64,linux/arm64
+          build-args: |
+            GO_VERSION=1.16
+            V2RAY_PLUGIN_VERSION=master
+            SS_RUST_VERSION=master
