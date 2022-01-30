@@ -1,8 +1,8 @@
-name: Build Latest
+name: Build Release
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 0 * * *"
+  push:
+    tags:
+      - "*"
 env:
   ProjectName: shadowsocks
   Owner: hmbsbige # ${{ github.repository_owner }}
@@ -11,6 +11,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Get tag
+        id: tag
+        uses: dawidd6/action-get-tag@v1
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 
@@ -33,5 +37,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           build-args: |
             GO_VERSION=1.16
-            V2RAY_PLUGIN_VERSION=master
-            SS_RUST_VERSION=master
+            V2RAY_PLUGIN_VERSION=v1.3.1
+            SS_RUST_VERSION=v${{ steps.tag.outputs.tag }}
