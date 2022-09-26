@@ -36,7 +36,7 @@ jobs:
           tags: |
             ghcr.io/${{ env.Owner }}/${{ env.ProjectName }}:${{ steps.tag.outputs.tag }}
             ghcr.io/${{ env.Owner }}/${{ env.ProjectName }}:latest
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
           build-args: |
             GO_VERSION=1.16
             V2RAY_PLUGIN_VERSION=v1.3.2
