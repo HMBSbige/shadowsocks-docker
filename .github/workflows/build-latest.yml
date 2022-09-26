@@ -1,8 +1,6 @@
 name: Build Latest
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 0 * * *"
 env:
   ProjectName: shadowsocks
   Owner: hmbsbige # ${{ github.repository_owner }}
