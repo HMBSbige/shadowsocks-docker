@@ -39,5 +39,5 @@ jobs:
           platforms: linux/amd64
           build-args: |
             GO_VERSION=1.16
-            V2RAY_PLUGIN_VERSION=v1.3.1
+            V2RAY_PLUGIN_VERSION=v1.3.2
             SS_RUST_VERSION=v${{ steps.tag.outputs.tag }}
