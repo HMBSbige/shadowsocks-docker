@@ -29,9 +29,17 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ghcr.io/${{ env.Owner }}/${{ env.ProjectName }}:latest
+          tags: ghcr.io/${{ env.Owner }}/${{ env.ProjectName }}:master
           platforms: linux/amd64,linux/arm64
           build-args: |
             GO_VERSION=1.16
             V2RAY_PLUGIN_VERSION=master
             SS_RUST_VERSION=master
+
+      - uses: Chizkiyahu/delete-untagged-ghcr-action@v2
+        with:
+          token: ${{ secrets.CR_PAT }}
+          repository: ${{ github.repository }}
+          repository_owner: ${{ env.Owner }}
+          untagged_only: true
+          owner_type: user
