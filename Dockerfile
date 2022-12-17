@@ -49,7 +49,7 @@ RUN case "$TARGETOS" in \
     && echo "CC=$CC" \
     && rustup override set nightly \
     && rustup target add "$RUST_TARGET" \
-    && RUSTFLAGS="-C linker=$CC" CC=$CC cargo build --target "$RUST_TARGET" --release --features "armv8 neon stream-cipher aead-cipher-extra" \
+    && RUSTFLAGS="-C linker=$CC" CC=$CC cargo build --target "$RUST_TARGET" --release --features "stream-cipher aead-cipher-extra" \
     && mv target/$RUST_TARGET/release/ss* target/release/
 
 FROM alpine
