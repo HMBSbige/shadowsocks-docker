@@ -40,6 +40,6 @@ jobs:
         with:
           token: ${{ secrets.CR_PAT }}
           repository: ${{ github.repository }}
-          repository_owner: ${{ env.Owner }}
+          repository_owner: ${{ github.repository_owner }}
           untagged_only: true
           owner_type: user
