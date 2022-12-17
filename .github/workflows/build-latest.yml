@@ -42,4 +42,5 @@ jobs:
           repository: ${{ github.repository }}
           repository_owner: ${{ github.repository_owner }}
           untagged_only: true
+          except_untagged_multiplatform: true
           owner_type: user
