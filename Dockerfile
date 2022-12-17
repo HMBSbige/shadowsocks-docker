@@ -43,7 +43,7 @@ RUN case "$TARGETOS" in \
     && apk add --no-cache build-base git \
     && git clone --depth 1 -b ${SS_RUST_VERSION} https://github.com/shadowsocks/shadowsocks-rust \
     && cd shadowsocks-rust \
-    && wget -qO- "https://github.com/HMBSbige/shadowsocks-docker/releases/download/1.14.2/$MUSL-cross.tgz" | tar -xzC /root/ \
+    && wget -qO- "https://musl.cc/$MUSL-cross.tgz" | tar -xzC /root/ \
     && PATH="/root/$MUSL-cross/bin:$PATH" \
     && CC=/root/$MUSL-cross/bin/$MUSL-gcc \
     && echo "CC=$CC" \
