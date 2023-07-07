@@ -37,6 +37,7 @@ jobs:
             SS_RUST_VERSION=master
 
       - uses: Chizkiyahu/delete-untagged-ghcr-action@v2
+        continue-on-error: true
         with:
           token: ${{ secrets.CR_PAT }}
           repository: ${{ github.repository }}
