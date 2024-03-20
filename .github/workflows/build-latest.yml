@@ -36,7 +36,7 @@ jobs:
             V2RAY_PLUGIN_VERSION=master
             SS_RUST_VERSION=master
 
-      - uses: Chizkiyahu/delete-untagged-ghcr-action@v3
+      - uses: Chizkiyahu/delete-untagged-ghcr-action@v4
         continue-on-error: true
         with:
           token: ${{ secrets.CR_PAT }}
